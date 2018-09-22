@@ -351,7 +351,6 @@ class Window(window.Window):
 
     def close(self):
         glfw.glfwSetWindowShouldClose(self._native_window, True)
-        glfw.glfwDestroyWindow(self._native_window)
         __windows__.remove(self)
         for i in range(len(self._timer_stack)):
             handler, interval = self._timer_stack[i]
